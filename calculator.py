@@ -4,6 +4,10 @@ from arithmetic import add, subtract, multiply, divide, square, cube, power, mod
 
 print("Hey, look! It's a calculator")
 
+
+#create while loop to continuously offer options to user
+#create options, including "quit"
+
 print("What would you like to do?")
 
 print("To add two numbers together, enter 'Add': ")
