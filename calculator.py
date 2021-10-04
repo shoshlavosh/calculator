@@ -1,6 +1,4 @@
 """A calculator"""
 
-def add(num1, num2):
-    """Add two numbers"""
+import arithmetic
 
-    return num1 + num2
