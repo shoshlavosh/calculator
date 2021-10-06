@@ -2,30 +2,29 @@
 
 from arithmetic import add, subtract, multiply, divide, square, cube, power, modulo
 
-print("Hey, look! It's a calculator")
+print()
+print("WELCOME TO THE CALCULATOR!")
 
 def menu():
     """Options for the calculator"""
 
+    print()
     print("What would you like to do?")
-
-    print("To ADD two numbers together, enter 'ADD'")
-    print("To SUBTRACT one number from a second number, enter 'SUBTRACT'")
-    print("To MULTIPLY two numbers, enter 'MULTIPLY'")
-    print("To DIVIDE one number from another, enter 'DIVIDE")
-    print("To SQUARE a number (multiply by itself twice), enter 'SQUARE'")
-    print("To CUBE a number (multiply by itself 3 times), enter 'CUBE'")
-    print("To calculate a number to the POWER of an exponent, enter 'POWER'")
-    print("To get the REMAINDER of one number divided by another, enter 'REMAINDER'")
+    print()
+    print("To ADD two numbers together, enter 'ADD'.")
+    print("To SUBTRACT one number from a second number, enter 'SUBTRACT'.")
+    print("To MULTIPLY two numbers, enter 'MULTIPLY'.")
+    print("To DIVIDE one number from another, enter 'DIVIDE'.")
+    print("To SQUARE a number (multiply the number twice), enter 'SQUARE'.")
+    print("To CUBE a number (multiply the number 3 times), enter 'CUBE'.")
+    print("To calculate a number to the POWER of an exponent, enter 'POWER'.")
+    print("To get the REMAINDER (or 'Modulo') of one number divided by another, enter 'REMAINDER'.")
     print("To QUIT, enter 'Q' or 'QUIT'")
+    print()
 
 menu()
 
-while True:
-
-    #create while loop to continuously offer options to user
-    #create options, including "quit"
-
+while True: #main loop
 
     calculate = input("Choose an option, or to view all options, enter 'MENU': ")
 
@@ -44,7 +43,7 @@ while True:
 
         answer = add(num1, num2)
 
-        print(f"{num1} added to {num2} equals {answer}.")
+        print(f"{num1} + {num2} equals {answer}.")
 
     elif calculate.lower().startswith("sub"):
         num1 = int(input("Enter the first number: "))
@@ -52,7 +51,7 @@ while True:
 
         answer = subtract(num1, num2)
 
-        print(f"{num2} subtracted from {num1} equals {answer}.")
+        print(f"{num1} - {num2} equals {answer}.")
 
     elif calculate.lower().startswith("mult"):
         num1 = int(input("Enter the first number: "))
@@ -60,7 +59,7 @@ while True:
 
         answer = multiply(num1, num2)
 
-        print(f"{num1} multiplied by {num2} equals {answer}.")
+        print(f"{num1} x {num2} equals {answer}.")
 
     elif calculate.lower().startswith("d"):
         num1 = int(input("Enter the first number: "))
@@ -83,6 +82,22 @@ while True:
         answer = cube(num)
 
         print(f"{num} cubed equals {answer}.")
+
+    elif calculate.lower().startswith("p"):
+        num = int(input("Enter a number: "))
+        exponent = int(input("Enter an exponent: "))
+
+        answer = power(num, exponent)
+
+        print(f"{num} to the power of {exponent} equals {answer}.")
+
+    elif calculate.lower().startswith("r"):
+        num1 = int(input("Enter the first number: "))
+        num2 = int(input("Enter the second number: "))
+
+        answer = modulo(num1, num2)
+
+        print(f"{num1} divided by {num2} has a remainder of {answer}.")
 
     else:
         print("Sorry, that's not a valid option. Please try again.")
